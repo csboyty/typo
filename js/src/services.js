@@ -52,8 +52,8 @@ services.constant("Config",{
         getAllSpecialDesign:"specialDesign/frontList",
         getAllTypo:"chineseCharacter/frontList",
         //getAllTypo:"data/json/chinese.json",
-        getSpecialDesignWorks:"http://design.hnu.edu.cn/pinwall/api/topics/:id/artifacts",
-        getSpecialDesignWorkDetail:"http://design.hnu.edu.cn/pinwall/api/artifacts/:id",
+        getSpecialDesignWorks:"http://pinwall.design-engine.org/api/topics/:id/artifacts",
+        getSpecialDesignWorkDetail:"http://pinwall.design-engine.org/api/artifacts/:id",
         getSpecialDesignDetail:"#",
         getTypoDetail:"chineseCharacter/select/:id",
         search:"search"

@@ -1,0 +1,51 @@
+<div ng-controller="searchResult" class="flexColumn">
+    <div class="header">
+        <a class="goBack" ng-click="hideDetail()">
+            <span class="icon-arrow-left"></span>
+        </a>
+
+        <h1 class="pageTitle">
+            搜索
+        </h1>
+    </div>
+
+    <div class="main searchResult flex">
+        <div class="pageHeader pageHeader003">
+            <div class="searchInput">
+                <!--<label class="labelTip">添加搜索</label>-->
+                <input class="input" type="text" ng-model="searchTag">
+                <div class="handler" ng-click="addSearchTags(searchTag)">
+                    <span class="icon-search"></span>
+                </div>
+            </div>
+            <ul class="list2 list201">
+                <li class="item" ng-repeat="t in tags">
+                    <span class="icon-close" ng-click="remove(t)"></span>
+                    <label class="text">{{t}}</label>
+                </li>
+                <li class="item" ng-if="tags.length!=0" ng-click="removeAll()">
+                    <label class="text">全部清除</label>
+                </li>
+            </ul>
+        </div>
+        <!--<p class="resultTip fB">共搜索到（{{total}}）项内容</p>-->
+        <ul class="list3">
+            <li class="item" ng-repeat="rc in result.ChineseCharacter">
+                <a class="link" ng-click="showTypoDetail(rc.id)">
+                    <img ng-src="{{rc.thumbnail}}" alt="" class="thumb">
+                    <p class="title">{{rc.title}}</p>
+                    <p class="date">{{rc.createTime|formatDate}}</p>
+                    <p class="excerpt gradient">{{rc.abstract_}}</p>
+                </a>
+            </li>
+            <li class="item" ng-repeat="rs in result.SpecialDesign">
+                <a class="link" ng-click="showSecialDesignDetail(rs.id)">
+                    <img ng-src="{{rs.thumbnail}}" alt="" class="thumb">
+                    <p class="title">{{rs.title}}</p>
+                    <p class="date">{{rs.createTime|formatDate}}</p>
+                    <p class="excerpt gradient">{{rs.abstract_}}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

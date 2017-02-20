@@ -1,0 +1,16 @@
+<div class="main" ng-controller="specialDesign"  window-scroll>
+    <div class="list1">
+        <div class="item item1" ng-repeat="r in results">
+            <img ng-src="{{r.bg}}">
+            <div class="info">
+                <div class="subInfo">
+                    <h3 class="title">{{r.title}}</h3>
+                    <p class="date">{{r.createTime|formatDate}}</p>
+                    <p class="author">指导老师：{{r.teacher}}</p>
+                </div>
+                <p class="excerpt">{{r.abstract_}}</p>
+                <a class="more" ng-click="showSpecialDesignDetail(r.id,r.specialDetailId,r.title)">查看更多</a>
+            </div>
+        </div>
+    </div>
+</div>

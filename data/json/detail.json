@@ -1,0 +1,11 @@
+{
+    "success":true,
+    "object":{
+        "bg":"data/1.png",
+        "title":"这里是标题",
+        "author":"作者",
+        "date":"2016-09-09",
+        "tags":["标签1","标签2"],
+        "content":"<p><img src='data/1.png'></p><p>这里是内容</p><p><img src='data/1.png'></p><p>这里是内容</p>"
+    }
+}

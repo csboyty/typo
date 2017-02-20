@@ -1,0 +1,35 @@
+{
+    "success":true,
+    "aaData":[
+        {
+            "id":57,
+            "thumbnail":"data/500x500/1.jpg",
+            "bg":"data/1.png",
+            "specialDetailId":57,
+            "title":"第一个课程设计",
+            "author":"作者",
+            "createTime":1463043921538,
+            "abstract_":"这里是描述"
+        },
+        {
+            "id":56,
+            "thumbnail":"data/500x500/4.jpg",
+            "bg":"data/1.png",
+            "specialDetailId":58,
+            "title":"第二个课程设计",
+            "author":"作者",
+            "createTime":1463043921538,
+            "abstract_":"这里是描述"
+        },
+        {
+            "id":55,
+            "thumbnail":"data/500x500/5.jpg",
+            "bg":"data/1.png",
+            "specialDetailId":59,
+            "title":"第三个课程设计",
+            "author":"作者",
+            "createTime":1463043921538,
+            "abstract_":"这里是描述"
+        }
+    ]
+}

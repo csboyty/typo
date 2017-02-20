@@ -1,0 +1,49 @@
+
+    <div class="main" ng-controller="home">
+        <div class="roll">
+            <a class="nav" ng-click="prev()" ng-if="roll.showPrev">
+                <span class="icon-arrow-left"></span>
+            </a>
+            <a class="nav next" ng-click="next()" ng-if="roll.showNext">
+                <span class="icon-arrow-right"></span>
+            </a>
+            <div class="info">
+<!--                <h2 class="title">{{roll.info.category|formatCategory}}</h2>-->
+                <div class="detail">
+                    <h3 class="subTitle">{{roll.info.title}}</h3>
+                    <p class="date">{{roll.info.createTime|formatDate}}</p>
+                    <p class="excerpt">{{roll.info.abstract_}}</p>
+                </div>
+            </div>
+            <ul class="numbers">
+                <li class="item" ng-repeat="i in roll.items">
+                    <a class="number" data-number="{{$index}}" ng-class="{active:$index==roll.currentNumber}"></a>
+                </li>
+            </ul>
+            <ul class="items" style="{{roll.rollLeft}}">
+                <li class="item" ng-repeat="i in roll.items">
+                    <a href="#" ng-click="showSpecialDesignDetail(i.id,i.specialDetailId,i.title)">
+                        <img class="thumb" ng-src="{{i.bg}}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 class="sectionTitle colorFF2E38">
+                最新教学课件
+            </h3>
+
+            <ul class="list">
+                <li class="item" ng-repeat="r in items">
+                    <a ng-click="showTypoDetail(r.id)" class="link">
+                        <img class="thumb" ng-src="{{r.thumbnail}}" alt="">
+                        <div class="info">
+                            <h4 class="title">{{r.title}}</h4>
+                            <p class="date">{{r.createTime|formatDate}}</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>

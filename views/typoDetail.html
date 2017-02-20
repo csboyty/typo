@@ -1,0 +1,11 @@
+<div ng-controller="typoDetail" class="flexColumn">
+    <div class="header colorFFFFFF">
+        <a class="goBack" ng-click="hideDetail()">
+            <span class="icon-arrow-left"></span>
+        </a>
+        <h3 class="pageTitle">{{info.title}}</h3>
+    </div>
+    <div class="main flex">
+        <div class="postContent" ng-bind-html="info.content"></div>
+    </div>
+</div>

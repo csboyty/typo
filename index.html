@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="webkit" name="renderer">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>TYPO</title>
+    <link href="css/lib/toaster.css" rel="stylesheet" type="text/css">
+    <link href="css/src/main.css" rel="stylesheet" type="text/css">
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-resource.min.js"></script>
+    <script src="js/lib/angular-touch.min.js"></script>
+    <script src="js/lib/angular-sanitize.min.js"></script>
+    <script src="js/lib/toaster.js"></script>
+    <script src="js/src/controllers.js"></script>
+    <script src="js/src/filters.js"></script>
+    <script src="js/src/models.js"></script>
+    <script src="js/src/services.js"></script>
+    <script src="js/src/directives.js"></script>
+    <script src="js/src/app.js"></script>
+</head>
+<body ng-controller="super">
+<toaster-container toaster-options="{'position-class': 'toast-bottom-right'}"></toaster-container>
+
+<div class="wrapper">
+    <div class="flexColumn">
+        <div class="header">
+            <a class="menuFlag" ng-click="showSlideMenu()">
+                <span ng-class="slideMenuIcon"></span>
+            </a>
+
+
+            <!--logo一般被H1包住，更好收录-->
+            <h1 class="logo">
+                <a href="#">
+                    <span class="icon-typo"></span>
+                    文字设计
+                </a>
+            </h1>
+
+            <ul class="menu" id="menu">
+                <li class="item"><a ng-class="{active:mainVars.currentMenu=='home'}"
+                                    ng-click="toPage('home')" class="link">首页</a></li>
+                <li class="item"><a ng-class="{active:mainVars.currentMenu=='typo1'}"
+                                    ng-click="toPage('typo','1')" class="link">汉字事故</a></li>
+                <li class="item"><a ng-class="{active:mainVars.currentMenu=='typo2'}"
+                                    ng-click="toPage('typo','2')" class="link">汉字应用</a></li>
+                <li class="item"><a ng-class="{active:mainVars.currentMenu=='typo3'}"
+                                    ng-click="toPage('typo','3')" class="link">汉字研究</a></li>
+                <li class="item"><a ng-class="{active:mainVars.currentMenu=='specialDesign'}"
+                                    ng-click="toPage('specialDesign')" class="link">专题设计</a></li>
+                <li class="item"><a ng-class="{active:mainVars.showSearchPanel}"
+                                    ng-click="toggleSearch()" class="link search"><span class="icon-search"></span></a></li>
+                </ul>
+        </div>
+
+        <ul class="sliderNav" ng-if="mainVars.showSlideMenu">
+            <li class="item">
+                <a href="#" class="link">
+                    <i class="icon-rocket"></i><b class="text">服务设计</b>
+                </a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">
+                    <i class="icon-typo"></i><b class="text">文字设计</b>
+                </a>
+            </li>
+            <li class="item">
+                <a href="#" class="link">
+                    <i class="icon-pinwall"></i><b class="text">图钉墙</b>
+                </a>
+            <li class="item">
+                <a href="#" class="link">
+                    <i class="icon-hid"></i><b class="text">工业设计史</b>
+                </a>
+            <li class="item">
+                <a href="" class="link">
+                    <i class="icon-gui"></i><b class="text">图形界面设计</b>
+                </a>
+        </ul>
+
+        <div ng-include="mainVars.contentTemplate"  ng-class="{hidden:mainVars.detailTemplate}" class="flex">
+
+        </div>
+    </div>
+
+
+    <div ng-include="mainVars.detailTemplate" class="detailTemplateContainer">
+
+    </div>
+    <div ng-include="mainVars.workDetailTemplate" class="detailTemplateContainer" style="z-index: 300">
+
+    </div>
+
+    <div class="searchPanel borderBox" ng-if="mainVars.showSearchPanel">
+        <div class="searchInput">
+            <input class="input" type="text" ng-model="searchContent">
+            <div class="handler" ng-click="toSearchResult(searchContent)">
+                <span class="icon-search"></span>
+            </div>
+        </div>
+        <p class="colorFFFFFF fB" style="margin: 20px 0" >推荐内容</p>
+        <ul class="list2">
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('图式')">图式</a></li>
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('学科')">学科</a></li>
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('竞赛')">竞赛</a></li>
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('篆刻')">篆刻</a></li>
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('演变')">演变</a></li>
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('应用')">应用</a></li>
+            <li class="item"><a href="#" class="text" ng-click="toSearchResult('汉文化')">汉文化</a></li>
+        </ul>
+    </div>
+
+    <div class="loading" ng-show="rootFlags.showLoading">
+    </div>
+</div>
+
+</body>
+</html>

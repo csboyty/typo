@@ -1,0 +1,12 @@
+<div class="main" ng-controller="typo"  window-scroll>
+    <ul class="list3">
+        <li class="item" ng-repeat="r in results">
+            <a class="link" ng-click="showTypoDetail(r.id)">
+                <img ng-src="{{r.thumbnail}}" alt="" class="thumb">
+                <p class="title">{{r.title}}</p>
+                <p class="date">{{r.createTime|formatDate}}</p>
+                <p class="excerpt gradient">{{r.abstract_}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

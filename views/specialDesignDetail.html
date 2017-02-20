@@ -1,0 +1,20 @@
+<div ng-controller="specialDesignDetail" class="flexColumn">
+    <div class="header colorFFFFFF">
+        <a class="goBack" ng-click="hideDetail()">
+            <span class="icon-arrow-left"></span>
+        </a>
+        <h3 class="pageTitle">{{info.title}}</h3>
+    </div>
+    <div class="main flex"  window-scroll="own">
+        <ul class="list3">
+            <li class="item" ng-repeat="a in artifacts">
+                <a class="link" ng-click="showWorkDetail(a.artifact.id)">
+                    <img  ng-src="{{a.artifact.profile_image}}"  alt="" class="thumb">
+                    <p class="title">{{a.artifact.name}}</p>
+                    <p class="date">{{a.artifact.created_at}}</p>
+                    <p class="excerpt gradient"></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
